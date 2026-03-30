@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料セミナー お申し込み | 株式会社メロン</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --teal:       #0f7c63;
+      --teal-dark:  #0a5244;
+      --teal-deep:  #072e25;
+      --teal-mid:   #15a882;
+      --teal-light: #f0faf7;
+      --orange:     #f07030;
+      --text:       #111827;
+      --muted:      #6b7280;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: rgba(7,46,37,.97);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 44px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header img { height: 26px; width: auto; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(180deg, #0e7b62 0%, #0a5d49 50%, #073a2e 100%);
+      padding: 64px 40px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+    }
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--teal-mid);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px 32px;
+      position: relative;
+    }
+    .hero-meta span {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+    }
+    .hero-meta span::before {
+      content: '📅 ';
+    }
+    .hero-meta span.place::before { content: '💻 '; }
+    .hero-meta span.price::before { content: '🎟 '; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 56px 20px 80px;
+      background: var(--teal-light);
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 52px 52px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 4px 40px rgba(15,124,99,.10);
+      border: 1px solid #d1ece5;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .card-sub {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+    .field label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+    .badge-required {
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--orange);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: .5px;
+    }
+    .field input {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 16px;
+      font-family: inherit;
+      border: 2px solid #d1ece5;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      color: var(--text);
+    }
+    .field input:focus {
+      border-color: var(--teal-mid);
+      box-shadow: 0 0 0 3px rgba(21,168,130,.12);
+    }
+    .field input::placeholder { color: #bbb; }
+
+    .divider {
+      height: 1px;
+      background: #e9f5f1;
+      margin: 28px 0;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background: linear-gradient(180deg, #f5893e 0%, #e86520 100%);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      font-family: inherit;
+      padding: 20px;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #b84d10, 0 8px 24px rgba(240,112,48,.35);
+      transition: all .2s;
+      letter-spacing: .3px;
+    }
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #b84d10, 0 12px 30px rgba(240,112,48,.45);
+    }
+    button[type="submit"]:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #b84d10;
+    }
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── SUCCESS ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 16px 0;
+    }
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      border: 3px solid var(--teal-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+    }
+    .success-msg h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+    }
+    .success-msg p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--teal-deep);
+      padding: 32px 44px;
+      text-align: center;
+    }
+    footer img { height: 22px; opacity: .7; margin-bottom: 10px; }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 600px) {
+      header { padding: 0 24px; }
+      .card { padding: 36px 24px; }
+      .hero { padding: 52px 24px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="MellonInc_logo_ol_yoko_white_x6.png" alt="MellonInc">
+  </header>
+
+  <div class="hero">
+    <span class="hero-label">Free Seminar</span>
+    <h1>Claude Code 活用セミナー<br>無料お申し込み</h1>
+    <div class="hero-meta">
+      <span>4月9日（木）14:00〜</span>
+      <span class="place">Google Meet にてオンライン開催</span>
+      <span class="price">参加費 無料</span>
+    </div>
+  </div>
+
+  <main>
+    <div class="card">
+      <p class="card-title">お申し込みフォーム</p>
+      <p class="card-sub">
+        以下の項目をご入力のうえ、送信してください。<br>
+        開催日程・Google Meet URLは、メールにてお送りします。
+      </p>
+
+      <!-- 申し込みフォーム -->
+      <form id="applyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdKLyutNMls-3mOS6hfSEamrgqundk6yhA66tlpp4fml3SUtg/formResponse" method="POST" target="hidden_iframe">
+
+        <div class="field">
+          <label for="company">会社名 <span class="badge-required">必須</span></label>
+          <input type="text" id="company" name="entry.1293782293" placeholder="〇〇株式会社" required>
+        </div>
+
+        <div class="field">
+          <label for="name">お名前 <span class="badge-required">必須</span></label>
+          <input type="text" id="name" name="entry.881171587" placeholder="名前" required>
+        </div>
+
+        <div class="field">
+          <label for="email">メールアドレス <span class="badge-required">必須</span></label>
+          <input type="email" id="email" name="entry.774522424" placeholder="メールアドレス" required>
+        </div>
+
+        <div class="divider"></div>
+
+        <button type="submit" id="submitBtn">申し込む（無料）&nbsp; →</button>
+        <p class="note">
+          送信後、登録メールアドレスに確認メールをお送りします。<br>
+          個人情報は本セミナーの運営にのみ使用いたします。
+        </p>
+      </form>
+
+      <!-- 送信完了 -->
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">✓</div>
+        <h3>お申し込みありがとうございます！</h3>
+        <p>
+          ご登録のメールアドレスに、<br>
+          開催日程とGoogle Meet URLをお送りします。<br><br>
+          当日のご参加をお待ちしております！
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="MellonInc_logo_ol_yoko_white_x6.png" alt="MellonInc">
+    <p>© 2025 Mellon Inc. All rights reserved.</p>
+  </footer>
+
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    const form = document.getElementById('applyForm');
+    const successMsg = document.getElementById('successMsg');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function() {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中…';
+      setTimeout(function() {
+        window.location.href = 'thanks.html';
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

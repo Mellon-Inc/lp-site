@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お申し込みありがとうございます | 株式会社メロン</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --teal:       #0f7c63;
+      --teal-dark:  #0a5244;
+      --teal-deep:  #072e25;
+      --teal-mid:   #15a882;
+      --teal-light: #f0faf7;
+      --orange:     #f07030;
+      --text:       #111827;
+      --muted:      #6b7280;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--teal-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: rgba(7,46,37,.97);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 44px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header img { height: 26px; width: auto; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 64px 52px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 4px 40px rgba(15,124,99,.10);
+      border: 1px solid #d1ece5;
+      text-align: center;
+    }
+
+    /* ── アイコン ── */
+    .icon-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      border: 3px solid var(--teal-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 40px;
+      animation: pop .5s cubic-bezier(.17,.67,.3,1.4) both;
+    }
+    @keyframes pop {
+      0%   { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--teal-mid);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 900;
+      color: var(--teal-dark);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .message strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* ── セミナー情報 ── */
+    .info-box {
+      background: var(--teal-light);
+      border: 1.5px solid #c0e6d8;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .info-box p {
+      font-size: 14px;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .info-box p:last-child { margin-bottom: 0; }
+    .info-box p span.ico { flex-shrink: 0; }
+    .info-box p strong { font-weight: 700; }
+
+    /* ── ボタン ── */
+    .btn-back {
+      display: inline-block;
+      background: linear-gradient(180deg, #f5893e 0%, #e86520 100%);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: inherit;
+      padding: 16px 48px;
+      border-radius: 60px;
+      box-shadow: 0 5px 0 #b84d10, 0 8px 24px rgba(240,112,48,.3);
+      transition: all .2s;
+      letter-spacing: .3px;
+    }
+    .btn-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #b84d10, 0 12px 30px rgba(240,112,48,.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--teal-deep);
+      padding: 32px 44px;
+      text-align: center;
+    }
+    footer img { height: 22px; opacity: .7; margin-bottom: 10px; }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 600px) {
+      header { padding: 0 24px; }
+      .card { padding: 44px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="MellonInc_logo_ol_yoko_white_x6.png" alt="MellonInc">
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="icon-wrap">✓</div>
+
+      <span class="label">Thank you!</span>
+      <h1>お申し込みありがとうございます！</h1>
+
+      <p class="message">
+        ご登録のメールアドレスに、<br>
+        <strong>Google Meet の参加URLと開催日程</strong>をお送りします。<br><br>
+        メールが届かない場合は、迷惑メールフォルダを<br>
+        ご確認いただくか、お問い合わせください。
+      </p>
+
+      <div class="info-box">
+        <p><span class="ico">📅</span><span><strong>開催日時：</strong>4月9日（木）14:00〜14:30（予定）</span></p>
+        <p><span class="ico">💻</span><span><strong>開催方法：</strong>Google Meet にてオンライン開催</span></p>
+        <p><span class="ico">🎟</span><span><strong>参加費：</strong>無料</span></p>
+      </div>
+
+      <a href="lp_v4.html" class="btn-back">セミナー詳細に戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <img src="MellonInc_logo_ol_yoko_white_x6.png" alt="MellonInc">
+    <p>© 2025 Mellon Inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
