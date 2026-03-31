@@ -397,18 +397,63 @@
       .gains-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .hero { padding: 60px 20px 40px; }
-      .hero-headline { font-size: 36px; }
-      .kp-row { flex-direction: column; align-items: center; }
-      .kp { min-width: unset; width: 100%; max-width: 320px; }
-      .hero-cta-box { padding: 28px 24px 24px; }
+      /* ナビ */
+      nav { padding: 0 16px; }
+      .nav-btn { font-size: 11px; padding: 8px 12px; white-space: nowrap; max-width: 52vw; overflow: hidden; text-overflow: ellipsis; }
+
+      /* ヒーロー */
+      .hero { padding: 48px 16px 56px; clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); }
+      .hero-headline { font-size: clamp(32px, 9vw, 44px); }
+      .hero-lead { font-size: 16px; margin-bottom: 24px; }
+
+      /* 人物画像：スマホでは非表示 */
+      .hero-char { display: none; }
+
+      /* KPカード：横3列コンパクト */
+      .kp-row { gap: 8px; flex-wrap: nowrap; margin-bottom: 28px; }
+      .kp { min-width: unset; flex: 1; font-size: 12px; padding: 10px 6px; border-radius: 8px; }
+
+      /* CTAボックス */
+      .hero-cta-box {
+        padding: 20px 16px 18px;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+      }
+      .cta-online-badge { font-size: 11px; letter-spacing: 0; white-space: nowrap; }
+      .btn-lg { font-size: 17px; padding: 18px 20px; width: 100%; box-sizing: border-box; }
+      .btn { font-size: 16px; padding: 16px 20px; }
+
+      /* CTA注釈テキスト：サイズを下げてグレーに */
+      .hero-cta-note { font-size: 12px; color: #888; font-weight: 500; }
+      .hero-cta-archive { font-size: 12px; color: #888; font-weight: 500; }
+
+      /* セクション共通 */
       .check-grid, .gains-grid, .why-grid, .profile-grid { grid-template-columns: 1fr; }
-      .wrap, .wrap-sm { padding: 0 20px; }
-      .sec, .sec-alt, .sec-dark { padding: 72px 0; }
+      .wrap, .wrap-sm { padding: 0 16px; }
+      .sec, .sec-alt, .sec-dark { padding: 56px 0; }
+      .sec-heading { font-size: clamp(22px, 6vw, 32px); }
       .agenda-row { grid-template-columns: 1fr; }
-      .company-box { padding: 28px 24px; }
-      .final { padding: 80px 24px; }
+      .company-box { padding: 24px 16px; }
+      .final { padding: 64px 16px; }
+
+      /* 講師カード：縦並びに */
+      .lecturer-card {
+        flex-direction: column;
+        padding: 28px 20px;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+      .lec-avatar {
+        width: 140px;
+        min-width: 140px;
+        height: 160px;
+        margin: 0 auto;
+      }
+      .p-name { font-size: 22px; }
+      .p-bio { font-size: 15px; }
+      .lec-role-badge { left: 50%; transform: translateX(-50%); top: -16px; }
     }
   </style>
 </head>
@@ -641,7 +686,7 @@
 
 <footer>
   <p>&copy; 2026 株式会社メロン &nbsp;|&nbsp; MELLON INC.</p>
-  <p><a href="https://melloninc.jp">melloninc.jp</a> &nbsp;/&nbsp; <a href="https://melloninc.jp/company">会社概要</a> &nbsp;/&nbsp; <a href="https://melloninc.jp/contact">お問い合わせ</a></p>
+  <p><a href="https://melloninc.jp">melloninc.jp</a> &nbsp;/&nbsp; <a href="https://melloninc.jp/company">会社概要</a> &nbsp;/&nbsp; <a href="#">お問い合わせ</a></p>
 </footer>
 
 <script>

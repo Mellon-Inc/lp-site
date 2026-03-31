@@ -101,7 +101,7 @@
 
     .message {
       font-size: 15px;
-      color: var(--muted);
+      color: #333;
       line-height: 1.9;
       margin-bottom: 36px;
     }
@@ -119,17 +119,25 @@
       margin-bottom: 36px;
       text-align: left;
     }
-    .info-box p {
-      font-size: 14px;
-      color: var(--teal-dark);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+    .info-box table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    .info-box p:last-child { margin-bottom: 0; }
-    .info-box p span.ico { flex-shrink: 0; }
-    .info-box p strong { font-weight: 700; }
+    .info-box td {
+      font-size: 15px;
+      color: #222;
+      padding: 8px 0;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .info-box td:first-child {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--teal-dark);
+      padding-right: 16px;
+      width: 1%;
+    }
+    .info-box tr:last-child td { padding-bottom: 0; }
 
     /* ── ボタン ── */
     .btn-back {
@@ -187,9 +195,20 @@
       </p>
 
       <div class="info-box">
-        <p><span class="ico">📅</span><span><strong>開催日時：</strong>4月9日（木）14:00〜14:30（予定）</span></p>
-        <p><span class="ico">💻</span><span><strong>開催方法：</strong>Google Meet にてオンライン開催</span></p>
-        <p><span class="ico">🎟</span><span><strong>参加費：</strong>無料</span></p>
+        <table>
+          <tr>
+            <td>開催日時</td>
+            <td>4月9日（木）14:00〜14:30（予定）</td>
+          </tr>
+          <tr>
+            <td>開催方法</td>
+            <td>Google Meet にてオンライン開催</td>
+          </tr>
+          <tr>
+            <td>参加費</td>
+            <td>無料</td>
+          </tr>
+        </table>
       </div>
 
       <a href="index.html" class="btn-back">セミナー詳細に戻る</a>
